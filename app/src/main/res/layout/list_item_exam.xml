@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:id="@+id/list_item_adding_exam_linear"
+    android:orientation="horizontal"
+    android:background="@drawable/ripple_effect"
+    android:clickable="true"
+    android:paddingLeft="@dimen/list_item_margin"
+    android:paddingRight="@dimen/list_item_margin"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp">
+
+    <TextView
+        style="@style/CircularTextView"
+        android:id="@+id/list_item_icon_text" />
+
+    <ImageView
+        android:layout_width="@dimen/list_item_radius"
+        android:layout_height="@dimen/list_item_radius"
+        android:background="@drawable/circular_bin_icon"
+        android:id="@+id/list_item_image_under_icon"
+        android:src="@drawable/bin_icon"
+        android:padding="5dp"
+        android:tint="#ffffff"
+        android:visibility="gone"/>
+
+
+    <TextView
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content"
+        android:textColor="?android:attr/textColor"
+        android:textSize="@dimen/list_item_main_text_size"
+        android:id="@+id/list_item_adding_exam_subject"
+        android:layout_toEndOf="@id/list_item_icon_text"
+        android:layout_marginStart="@dimen/list_item_text_left_margin" />
+
+    <TextView
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="@dimen/list_item_sub_text_size"
+        android:id="@+id/list_item_adding_exam_date"
+        android:layout_below="@id/list_item_adding_exam_subject"
+        android:layout_toEndOf="@id/list_item_icon_text"
+        android:layout_marginStart="@dimen/list_item_text_left_margin" />
+
+
+    <!--todo ło panie, kto to panu tak spierdolił-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_item_adding_exam_date"
+        android:visibility="gone"
+        android:id="@+id/exams_expanded_list_item_layout"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/list_item_expanded_first_layout"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/info_icon"
+                android:tint="?android:attr/textColorSecondary"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="center"
+                android:textColor="?android:attr/textColorSecondary"
+                android:id="@+id/list_item_expanded_info" />
+                
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/list_item_expanded_first_layout"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/time_icon"
+                android:tint="?android:attr/textColorSecondary"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/list_item_expanded_time"
+                android:layout_marginStart="10dp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:layout_gravity="center" />
+                
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

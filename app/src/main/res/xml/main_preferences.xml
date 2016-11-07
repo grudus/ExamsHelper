@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="pref_design_group"
+        android:title="@string/pref_desing_group">
+
+
+        <CheckBoxPreference
+            android:key="@string/key_night_mode"
+            android:defaultValue="true"
+            android:title="@string/pref_night_mode"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pref_grades_group"
+        android:title="@string/pref_grades_group">
+
+        <Preference
+            android:key="@string/key_grades_type"
+            android:title="@string/pref_grades"
+            android:summary="@string/pref_grades_sub" />
+
+        <SwitchPreference
+            android:key="@string/key_grades_decimal"
+            android:title="@string/pref_grades_decimal"
+            android:summary="@string/pref_grades_decimal_sub"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="@string/key_fabric_group"
+        android:title="@string/pref_fabric_group">
+
+        <Preference
+            android:title="@string/pref_fabric_exams"
+            android:summary="@string/pref_fabric_exams_sub"
+            android:key="@string/key_fabric_exams" />
+
+        <Preference
+            android:title="@string/pref_fabric_subjects"
+            android:summary="@string/pref_fabric_subjects_sub"
+            android:key="@string/key_fabric_subjects" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

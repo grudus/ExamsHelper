@@ -1,0 +1,207 @@
+<resources>
+    <string name="date_format">dd/MM/yyyy</string>
+
+    <!--Toolbar menu constants-->
+    <string name="toolbar_settings">Ustawienia</string>
+    <string name="toolbar_statistics">Statystyki</string>
+    <string name="toolbar_delete_all">Usun wszystko</string>
+    <string name="toolbar_refresh_subjects">Odswiez przedmioty</string>
+    <string name="toolbar_edit_subjects">Edytuj przedmioty</string>
+    <string name="toolbar_change_theme">Zmień motyw</string>
+
+    <!--drawer-->
+    <string name="drawer_open">opening drawer</string>
+    <string name="drawer_close">closing drawer</string>
+
+    <!--Tabs -->
+    <string-array name="tab_titles">
+        <item>Nadchodzące</item>
+        <item>Napisane</item>
+    </string-array>
+
+
+    <!--Add new Exam-->
+    <string name="add_new_exam_toolbar_text">Dodaj egzamin</string>
+    <string name="hint_add_exam_subject">Przedmiot</string>
+    <string name="hint_add_exam_extras">Zaliczenie</string>
+    <string name="hint_add_exam_date">Data</string>
+    <string name="hint_add_exam_time">Godzina</string>
+    <string name="button_text_add_exam">Dodaj</string>
+
+    <string name="empty_subject_add_exam">Musisz podac przedmiot</string>
+    <string name="empty_date_add_exam">Musisz podac date</string>
+
+    <string name="add_exam_dialog_title">Wybierz przedmiot</string>
+
+    <!--Subjects list-->
+    <string name="subject_list_toolbar_text">Wybierz przedmiot</string>
+    <string name="subject_list_delete_text">Usuń</string>
+
+    <string-array name="default_subjects">
+        <item>Matematyka</item>
+        <item>Fizyka</item>
+        <item>Chemia</item>
+        <item>Polski</item>
+        <item>Angielski</item>
+        <item>Niemiecki</item>
+        <item>Geografia</item>
+        <item>Biologia</item>
+        <item>Informatyka</item>
+        <item>Religia</item>
+        <item>WF</item>
+    </string-array>
+
+    <string-array name="default_subjects_university">
+        <item>Analiza matematyczna</item>
+        <item>Algebra liniowa</item>
+        <item>Podstawy programowania</item>
+        <item>Fizyka</item>
+        <item>Filozofia</item>
+        <item>Prawa autorskie</item>
+        <item>Miernictwo</item>
+        <item>Elektronika</item>
+        <item>OSK</item>
+        <item>Logika</item>
+        <item>WF</item>
+    </string-array>
+
+    <!--Add new subject-->
+    <string name="add_subject_toolbar_text">Dodaj przedmiot</string>
+    <string name="hint_subject_title">Przedmiot</string>
+    <string name="hint_subject_color">Kolor</string>
+    <string name="warning_add_subject_empty">Musisz podac przedmiot</string>
+    <string name="warning_add_subject_badchar">Przedmiot musi zaczynac sie od litery</string>
+    <string name="warning_add_subject_subject_already_exists">Podany przedmiot już istnieje</string>
+    <string name="button_text_change_subject">Zmień</string>
+
+    <string name="button_text_save">Zapisz</string>
+    <string name="button_text_back">Cofnij</string>
+
+
+    <!--Single subject exams-->
+    <string name="sse_toolbar">Egzaminy</string>
+    <string name="sse_default_exam_info">Brak opisu</string>
+    <string name="sse_info_average">Średnia: %1$s</string>
+    <string name="sse_info_median">Mediana: %1$s</string>
+    <string name="sse_info_dominant">Dominanta: %1$s</string>
+    <string name="sse_info_lack_dominant">brak</string>
+    <string name="sse_info_passed">Zaliczone: %1$s</string>
+    <string name="sse_info_failed">Niezaliczone: %1$s</string>
+    <string name="sse_info_percent">Wynik: %1$s</string>
+
+    <!--ungraded exams-->
+    <string name="ungraded_toolbar_text">Nieocenione</string>
+
+    <!--list items-->
+    <string name="list_item_old_exam_no_grades">Nieocenione</string>
+
+    <!--transitions -->
+    <string name="transition_list_item_to_toolbar">listItemToToolbar</string>
+
+    <!--tags-->
+    <string name="tag_dialog_select_grade">selectGrade</string>
+    <string name="tag_dialog_select_subject">selectSubject</string>
+    <string name="tag_dialog_edit_subject">editSubject</string>
+    <string name="tag_dialog_add_new_subject">addNewSubject</string>
+    <string name="tag_dialog_edit">confirm</string>
+    <string name="tag_dialog_confirm">confirm</string>
+    <string name="tag_dialog_radio">radio</string>
+
+
+    <!--dialogs-->
+    <string name="dialog_select_grade_title">Wybierz ocenę</string>
+    <string name="dialog_select_grade_posbut">Wybierz</string>
+    <string name="dialog_save_posbut">Zapisz</string>
+    <string name="dialog_negbut">Cofnij</string>
+    <string name="dialog_enter_text_title">Podaj zaliczenie</string>
+    <string name="dialog_confirm_pref_title">Zmiana ocen</string>
+    <string name="dialog_confirm_pref_content">Pamiętaj! Zmiany tym polu spowodują usunięcie wszystkich napisanych egzaminów. Kontynuwać?</string>
+
+
+    <!--preferences-->
+    <string name="title_activity_settings">Ustawienia</string>
+    <string name="pref_desing_group">Wygląd</string>
+    <string name="pref_night_mode">Używaj trybu nocnego</string>
+    <string name="pref_user_group">Użytkownik</string>
+    <string name="pref_user_name">Nazwa użytkownika</string>
+    <string name="pref_user_name_sub">Pod tą nazwą będą Cię widzieć inni</string>
+
+    <string name="pref_grades_group">Oceny</string>
+    <string name="pref_grades">Rodzaj ocen</string>
+    <string name="pref_grades_sub">Określ czy wyświetlane oceny są z zakresu studiów, czy nauczania podstawowego</string>
+    <string name="pref_grades_decimal">Cząstkowe oceny jako całość</string>
+    <string name="pref_grades_decimal_sub">Oceny cząstkowe (np. 3+) będą liczone w statystykach jako całe.
+        W przeciwnym wypadku ± 0.25</string>
+
+    <!--preference keys-->
+
+
+    <!--preference grade type-->
+    <string-array name="pref_grades_entries">
+        <item>Oceny szkolne</item>
+        <item>Oceny studenckie</item>
+    </string-array>
+
+    <string-array name="pref_grades_entryValues">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+
+    <string name="button_confirm_yes">Tak</string>
+    <string name="button_confirm_no">Nie</string>
+    <string name="toolbar_main_title">Egzaminy</string>
+    <string name="pref_fabric_subjects_sub">Usuwa wszelkie zmiany w przedmiotach i przywraca domyślne wartości</string>
+    <string name="pref_fabric_subjects">Przywróć domyślne przedmioty</string>
+    <string name="pref_fabric_exams_sub">Czyści informacje zarówno o nadchodzących, jak i o napisanych egzaminach</string>
+    <string name="pref_fabric_exams">Usuń wszystkie egzaminy</string>
+    <string name="pref_fabric_group">Ustawienia fabryczne</string>
+    <string name="menu_item_about">O aplikacji</string>
+    <string name="menu_item_exams">Egzaminy</string>
+    <string name="menu_item_login">Zaloguj się</string>
+    <string name="menu_item_logout">Wyloguj się</string>
+
+
+    <!--login activity-->
+    <string name="toast_empty_creditionals">Musisz podac dane</string>
+    <string name="toast_bad_creditionals">Podano bledne dane</string>
+    <string name="toast_server_error">Nie mozna polaczyc sie z serverem</string>
+    <string name="toast_successful_login">Logowanie przebiegło pomyślnie</string>
+    <string name="toast_unexpected_error">Wystąpił niespodziewany błąd</string>
+    <string name="toast_cannot_find_user_error">Podany login nie istnieje</string>
+    <string name="toast_password_error">Podane hasło jest nieprawidłowe</string>
+
+
+    <string name="toast_logout_text">Jesteś wylogowany</string>
+    <string name="error_login_unavailable">Login niedostępny</string>
+    <string name="error_email_unavailable">Email niedostępny</string>
+    <string name="error_email_incorrect">Niepoprawny Email</string>
+    <string name="net_register_login_message">available</string>
+    <string name="error_password">Hasło za krótkie</string>
+    <string name="dialog_register_title">Rejestracja</string>
+    <string name="dialog_register_message">Rejestracja przebiegła pomyślnie. Na podany email zostanie wysłany link aktywacyjny.</string>
+    <string name="error_register_password">Hasło musi mieć minimum 8 znaków</string>
+    <string name="error_email_or_login_unavailable">Podane dane są niedostępne</string>
+    <string name="error_connection">Nie można połączyć się z serwerem</string>
+    <string name="about_title">ExamsHelper</string>
+    <string name="about_text">Aplikacja stworzona przez Jakuba Grudę. Fajna, cnie?</string>
+    <string name="error_password_too_short">Hasło mus mieć co najmniej 8 znaków</string>
+    <string name="error_login_incorrect">Zawiera niedozwolone znaki</string>
+    <string name="hamburger_title_logout">Niezalogowany</string>
+    <string name="stats_toolbar_main">Ogólnie</string>
+    <string name="stats_no_exams">Brak egzaminów</string>
+    <string name="chart_avg_desc">Średnia wartość ocen</string>
+    <string name="chart_freq_desc">Ilość egzaminów na miesiąc</string>
+    <string name="chart_percent_desc">Ilość egzaminów z poszczególnych przedmiotów</string>
+    <string name="nothing" />
+    <string name="toolbar_login">Logowanie</string>
+    <string name="login_button_login">Zaloguj sie</string>
+    <string name="login_login">Login</string>
+    <string name="login_register">Zarejestruj się</string>
+    <string name="register_button">Utwórz konto</string>
+    <string name="register_email">Email</string>
+    <string name="register_username">Login</string>
+    <string name="show_hide_password_password">Hasło</string>
+
+
+</resources>

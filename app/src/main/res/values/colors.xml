@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#536DFE</color>
+
+    <color name="backgroundColor">#fafafa</color>
+    <color name="dialogColor">#ffffff</color>
+
+    <color name="textColorPrimary">#DC000000</color>
+    <color name="textColorSecondary">#8A000000</color>
+    <color name="textColorHint">#64000000</color>
+
+
+    <color name="toolbar_text_theme">#ffffff</color>
+    <color name="settingsColor">#ffffff</color>
+    <color name="tabsScrollColor">#ffffff</color>
+
+    <color name="floating_button">@color/colorAccent</color>
+
+    <color name="button">@color/colorPrimary</color>
+    <color name="button_text">@color/settingsColor</color>
+
+    <color name="niceBlueColor">#4286F5</color>
+
+    <color name="navigationViewPressed">#55536DFE</color>
+
+    <color name="tabTextNoFocus">#9fa8da</color>
+    <color name="cardBackground">#e0e0e0</color>
+    
+    <!--DARK THEME-->
+    <color name="dark_colorPrimaryDark">#101010</color>
+    <color name="dark_colorPrimary">#212121</color>
+    <color name="dark_colorAccent">#4CAF50</color>
+
+    <color name="dark_backgroundColor">#303030</color>
+    <color name="dark_dialogColor">#424242</color>
+
+    <color name="dark_textColorPrimary">#FFffffff</color>
+    <color name="dark_textColorSecondary">#B3ffffff</color>
+    <color name="dark_textColorHint">#80ffffff</color>
+    <color name="dark_cardBackground">#212121</color>
+
+
+    <color name="deleteColor">#d50000</color>
+
+
+    <color name="seekBarRed">#cc0000</color>
+    <color name="seekBarGreen">#00c853</color>
+    <color name="seekBarBlue">@color/colorPrimary</color>
+
+    <color name="dark_tabTextNoFocus">#bdbdbd</color>
+
+
+    <color name="navigationViewPressedDark">#554CAF50</color>
+    <color name="colorHighlight">#d5d5d5</color>
+
+
+    <string-array name="defaultSubjectsColors">
+        <item>#f44336</item>
+        <item>#E91E63</item>
+        <item>#9C27B0</item>
+        <item>#673AB7</item>
+        <item>#3F51B5</item>
+        <item>#2196F3</item>
+        <item>#03A9F4</item>
+        <item>#00BCD4</item>
+        <item>#009688</item>
+        <item>#4CAF50</item>
+        <item>#8BC34A</item>
+    </string-array>
+
+    <string-array name="gradesColors">
+        <item>#E53935</item>
+        <item>#EF6C00</item>
+        <item>#009688</item>
+        <item>#00796B</item>
+        <item>#558B2F</item>
+        <item>#33691E</item>
+    </string-array>
+
+    <string-array name="toolBarColors">
+        <item>#f44336</item>
+        <item>#E91E63</item>
+        <item>#9C27B0</item>
+        <item>#673AB7</item>
+        <item>#3F51B5</item>
+        <item>#2196F3</item>
+        <item>#03A9F4</item>
+        <item>#00BCD4</item>
+        <item>#009688</item>
+        <item>#4CAF50</item>
+        <item>#8BC34A</item>
+        <item>#CDDC39</item>
+        <item>#FFEB3B</item>
+        <item>#FFC107</item>
+        <item>#FF9800</item>
+        <item>#FF5722</item>
+        <item>#795548</item>
+        <item>#9E9E9E</item>
+        <item>#607D8B</item>
+    </string-array>
+
+    <string-array name="statusBarColors">
+        <item>#d32f2f</item>
+        <item>#C2185B</item>
+        <item>#7B1FA2</item>
+        <item>#512DA8</item>
+        <item>#303F9F</item>
+        <item>#1976D2</item>
+        <item>#0288D1</item>
+        <item>#0097A7</item>
+        <item>#00796B</item>
+        <item>#388E3C</item>
+        <item>#689F38</item>
+        <item>#AFB42B</item>
+        <item>#FBC02D</item>
+        <item>#FFA000</item>
+        <item>#F57C00</item>
+        <item>#E64A19</item>
+        <item>#5D4037</item>
+        <item>#616161</item>
+        <item>#455A64</item>
+    </string-array>
+
+
+</resources>

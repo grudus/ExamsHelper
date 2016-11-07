@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="@dimen/list_item_margin"
+        android:background="@color/deleteColor"
+        android:id="@+id/invisible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bin_icon"
+            android:tint="@color/dark_textColorPrimary"
+
+            android:id="@+id/list_item_adding_exam_bin"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/list_item_main_text_size"
+            android:textColor="#fff"
+            android:text="@string/subject_list_delete_text"
+            android:gravity="center"/>
+
+        </LinearLayout>
+
+
+
+
+    <!---->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/list_item_adding_exam_linear"
+        android:background="@drawable/ripple_effect"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:padding="@dimen/list_item_margin"
+    >
+
+        <TextView
+            style="@style/CircularTextView"
+            android:id="@+id/list_item_subject_icon_text" />
+
+        <TextView
+            style="@style/TextRightToCircular"
+            android:id="@+id/list_item_subject_text" />
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

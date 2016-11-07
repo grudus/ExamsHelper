@@ -1,0 +1,162 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textColor" >@color/textColorPrimary</item>
+        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+        <item name="android:textColorHint">@color/textColorHint</item>
+
+        <item name="grudusToolbarTheme">@style/ToolbarTheme</item>
+        <item name="android:buttonStyle">@style/AddButtonStyle</item>
+
+        <item name="background">@color/backgroundColor</item>
+        <item name="dialogBackground">@color/dialogColor</item>
+
+        <item name="floatingButtonColor">@color/colorAccent</item>
+        <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
+        <item name="iconColor">@color/textColorPrimary</item>
+        <item name="colorControlNormal">#9e9e9e</item>
+        <item name="selectedListItemBackgroundColor">#eeeeee</item>
+
+        <item name="navigationViewBackground">@drawable/navigation_view_background</item>
+        <item name="navigationViewTextColor">@drawable/navigation_view_text_color</item>
+        <item name="navigationViewIconColor">@drawable/navigation_view_icon_color</item>
+        <item name="tabTextNoFocus">@color/tabTextNoFocus</item>
+
+        <item name="cardBackground">@color/cardBackground</item>
+    </style>
+
+    <style name="AppTheme.Dark" parent="AppTheme">
+        <item name="colorPrimary">@color/dark_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/dark_colorPrimaryDark</item>
+        <item name="colorAccent">@color/dark_colorAccent</item>
+
+        <item name="android:textColor" >@color/dark_textColorPrimary</item>
+        <item name="android:textColorSecondary">@color/dark_textColorSecondary</item>
+        <item name="android:textColorHint">@color/dark_textColorHint</item>
+
+        <item name="background">@color/dark_backgroundColor</item>
+        <item name="dialogBackground">@color/dark_dialogColor</item>
+
+        <item name="floatingButtonColor">@color/dark_colorAccent</item>
+        <item name="iconColor">@color/dark_textColorPrimary</item>
+        <item name="colorControlNormal">#9e9e9e</item>
+
+        <item name="android:timePickerDialogTheme" tools:targetApi="lollipop">@style/TimePickerTheme</item>
+        <item name="android:datePickerDialogTheme" tools:targetApi="lollipop">@style/DatePickerTheme</item>
+
+        <item name="selectedListItemBackgroundColor">#313131</item>
+        <item name="navigationViewBackground">@drawable/navigation_view_background_dark</item>
+
+        <item name="tabTextNoFocus">@color/dark_tabTextNoFocus</item>
+        <item name="cardBackground">@color/dark_cardBackground</item>
+    </style>
+
+    <style name="TimePickerTheme" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/dark_colorAccent</item>
+    </style>
+
+    <style name="DatePickerTheme" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/dark_colorAccent</item>
+    </style>
+    
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorPrimary">#ffffff</item>
+        <item name="android:textColorSecondary">#ffffff</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="ToolbarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+    
+    <style name="ImageIconAddExamTheme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">@dimen/add_xxx_icon_padding</item>
+        <item name="android:contentDescription">@null</item>
+        <item name="android:tint">?attr/iconColor</item>
+    </style>
+
+    <!--todo change, it is ugly-->
+    <style name="AddButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">end</item>
+        <item name="android:layout_marginTop">@dimen/add_button_margin</item>
+        <item name="android:background">?attr/colorAccent</item>
+        <item name="android:textColor">@color/dark_textColorPrimary</item>
+        <item name="android:textSize">@dimen/add_button_text_size</item>
+        <item name="android:paddingTop">@dimen/add_button_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/add_button_padding_vertical</item>
+        <item name="android:paddingLeft">@dimen/add_button_padding_horizontal</item>
+        <item name="android:paddingRight">@dimen/add_button_padding_horizontal</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="UserInputLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_margin">@dimen/add_xxx_margin</item>
+    </style>
+
+    <style name="UserInputEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/add_xxx_edit_text_text_size</item>
+        <item name="android:gravity">end</item>
+        <item name="android:padding">@dimen/add_xxx_edit_text_padding</item>
+        <item name="android:textColorHint">?android:attr/textColorHint</item>
+        <item name="android:textColor">?android:attr/textColor</item>
+    </style>
+
+    <style name="CircularTextView">
+        <item name="android:layout_width">@dimen/list_item_radius</item>
+        <item name="android:layout_height">@dimen/list_item_radius</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">@dimen/list_item_circular_view_text_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/circular_listitem</item>
+    </style>
+
+    <style name="TextRightToCircular">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/list_item_main_text_size</item>
+        <item name="android:layout_marginStart">@dimen/list_item_text_left_margin</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">?android:attr/textColor</item>
+    </style>
+
+    <style name="FloatingActionButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom|end</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:tint">#ffffff</item>
+        <item name="backgroundTint">?attr/floatingButtonColor</item>
+    </style>
+
+    <style name="SubjectExamsInfoTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">@dimen/sse_grades_info_text_padding</item>
+        <item name="android:textSize">@dimen/sse_average_text_size</item>
+        <item name="android:textColor">@color/dark_textColorPrimary</item>
+    </style>
+
+</resources>

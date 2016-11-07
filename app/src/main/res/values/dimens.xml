@@ -1,0 +1,43 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Add subject/exam view -->
+    <dimen name="add_xxx_icon_padding">12dp</dimen>
+    <dimen name="add_xxx_edit_text_text_size">22sp</dimen>
+    <dimen name="add_xxx_edit_text_padding">10dp</dimen>
+    <dimen name="add_xxx_margin">16dp</dimen>
+
+    <dimen name="add_button_margin">16dp</dimen>
+    <dimen name="add_button_text_size">14sp</dimen>
+    <dimen name="add_button_padding_vertical">10dp</dimen>
+    <dimen name="add_button_padding_horizontal">20dp</dimen>
+
+    <!-- Single item in list view-->
+    <dimen name="list_item_circular_view_text_size">28sp</dimen>
+    <dimen name="list_item_margin">16dp</dimen>
+    <dimen name="list_item_radius">40dp</dimen>
+    <dimen name="list_item_text_left_margin">16dp</dimen>
+    <dimen name="list_item_main_text_size">16sp</dimen>
+
+    <dimen name="list_item_sub_text_size">14sp</dimen>
+
+    <!-- Single subject exams -->
+    <dimen name="sse_title_text_size">@dimen/list_item_main_text_size</dimen>
+    <dimen name="sse_average_text_size">14sp</dimen>
+    <dimen name="sse_subject_title_margin_top">25dp</dimen>
+    <dimen name="sse_grades_info_layout_margin">24dp</dimen>
+    <dimen name="sse_grades_info_text_padding">10dp</dimen>
+    <dimen name="sse_line_margin">5dp</dimen>
+
+
+    <!--dialogs-->
+    <dimen name="dialog_color_view_height">120dp</dimen>
+
+    <!--stats-->
+    <dimen name="stat_card_height">240dp</dimen>
+    <dimen name="stat_card_marginX">20dp</dimen>
+    <dimen name="stat_card_marginY">20dp</dimen>
+
+</resources>

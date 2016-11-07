@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingBottom="20dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="?attr/dialogBackground"
+    android:layout_margin="25dp">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_color_view_height"
+        android:id="@+id/dialog_edit_subject_colorview"
+        android:background="?attr/colorPrimary"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_below="@id/dialog_edit_subject_colorview"
+        android:id="@+id/edit_subject_textinputlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
+
+    <EditText
+        android:id="@+id/edit_subject_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="?android:attr/textColor"
+        android:textColorHint="?android:attr/textColorHint"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:hint="Nazwa"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <com.grudus.nativeexamshelper.layouts.ColorPickerSeekBars
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/color_picker_seek_bars"
+        android:layout_below="@id/edit_subject_textinputlayout">
+
+    </com.grudus.nativeexamshelper.layouts.ColorPickerSeekBars>
+
+
+
+</RelativeLayout>

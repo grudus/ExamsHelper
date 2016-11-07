@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:id="@+id/menu_group_profile" android:checkableBehavior="single">
+
+        <item android:id="@+id/menu_item_statistics"
+            android:title="@string/toolbar_statistics"
+            android:icon="@drawable/statistics_icon" />
+
+        <item android:id="@+id/menu_item_exams"
+            android:title="@string/menu_item_exams"
+            android:icon="@drawable/exams_icon"
+            android:checked="true"/>
+
+        <item android:id="@+id/menu_item_web"
+            android:title="@string/menu_item_login"
+            android:icon="@android:drawable/stat_notify_sync"
+            />
+
+    </group>
+
+
+    <group android:id="@+id/menu_group_edit" android:checkableBehavior="single">
+
+
+        <item android:id="@+id/menu_item_edit_subjects"
+            android:title="@string/toolbar_edit_subjects"
+            android:icon="@drawable/info_icon"/>
+
+        <item android:id="@+id/menu_item_change_theme"
+            android:title="@string/toolbar_change_theme"
+            android:icon="@drawable/change_theme_icon"/>
+
+    </group>
+
+
+    <group android:id="@+id/menu_group_settings" android:checkableBehavior="single">
+
+        <item android:id="@+id/menu_item_settings"
+            android:title="@string/toolbar_settings"
+            android:icon="@drawable/settings_icon" />
+
+        <item android:id="@+id/menu_item_info"
+            android:title="@string/menu_item_about"
+            android:icon="@android:drawable/ic_dialog_info" />
+
+
+
+    </group>
+
+</menu>

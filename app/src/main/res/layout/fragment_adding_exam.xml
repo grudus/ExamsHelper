@@ -1,0 +1,21 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:id="@+id/adding_exam_content">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycler_view_adding_exam_content" />
+
+    <android.support.design.widget.FloatingActionButton
+        style="@style/FloatingActionButtonStyle"
+        android:id="@+id/floating_button_add_exam"
+        android:src="@drawable/add_icon"
+
+/>
+
+</android.support.design.widget.CoordinatorLayout>

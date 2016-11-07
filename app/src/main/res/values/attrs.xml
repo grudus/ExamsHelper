@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GrudusAttrs">
+        <attr name="grudusToolbarTheme" format="reference"/>
+        <attr name="backgroundColor" format="reference|color" />
+        <attr name="floatingButtonColor" format="reference|color" />
+        <attr name="iconColor" format="reference|color" />
+        <attr name="selectedListItemBackgroundColor" format="reference|color" />
+        <attr name="navigationViewBackground" format="reference" />
+        <attr name="navigationViewTextColor" format="reference" />
+        <attr name="navigationViewIconColor" format="reference" />
+        <attr name="textColorOnBackground" format="reference|color" />
+        <attr name="tabTextHighlight" format="reference|color" />
+        <attr name="tabTextNoFocus" format="reference|color" />
+        <attr name="dialogBackground" format="reference|color" />
+        <attr name="cardBackground" format="reference|color" />
+
+    </declare-styleable>
+</resources>

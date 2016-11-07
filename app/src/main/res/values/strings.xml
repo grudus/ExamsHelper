@@ -1,0 +1,229 @@
+<resources>
+    <string name="app_name" translatable="false">ExamsHelper</string>
+    <string name="date_format">dd/MM/yyyy</string>
+
+    <!--Toolbar menu constants-->
+    <string name="toolbar_settings">Settings</string>
+    <string name="toolbar_statistics">Stats</string>
+    <string name="toolbar_delete_all">Delete all</string>
+    <string name="toolbar_refresh_subjects">Refresh subjects</string>
+    <string name="toolbar_edit_subjects">Edit subjects</string>
+    <string name="toolbar_change_theme">Change theme</string>
+
+    <!--drawer-->
+    <string name="drawer_open">opening drawer</string>
+    <string name="drawer_close">closing drawer</string>
+
+    <!--Tabs -->
+    <string-array name="tab_titles">
+        <item>Incoming</item>
+        <item>Written</item>
+    </string-array>
+
+
+    <!--Add new Exam-->
+    <string name="add_new_exam_toolbar_text">Add exam</string>
+    <string name="hint_add_exam_subject">Subject</string>
+    <string name="hint_add_exam_extras">Info</string>
+    <string name="hint_add_exam_date">Date</string>
+    <string name="hint_add_exam_time">Time</string>
+    <string name="button_text_add_exam">Add</string>
+
+    <string name="empty_subject_add_exam">You have to select a subject!</string>
+    <string name="empty_date_add_exam">You have to add date!</string>
+
+    <string name="add_exam_dialog_title">Select subject</string>
+
+    <!--Subjects list-->
+    <string name="subject_list_toolbar_text">Select subject</string>
+    <string name="subject_list_delete_text">Delete</string>
+
+    <string-array name="default_subjects">
+        <item>Math</item>
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <item>English</item>
+        <item>Polish</item>
+        <item>German</item>
+        <item>Geography</item>
+        <item>Biology</item>
+        <item>Computer Science</item>
+        <item>Religious education</item>
+        <item>PE</item>
+    </string-array>
+
+    <string-array name="default_subjects_university">
+        <item>Discrete Mathematics </item>
+        <item>Linear Algebra</item>
+        <item>Programming </item>
+        <item>General Physics </item>
+        <item>Philosophy</item>
+        <item>Computer Networks</item>
+        <item>Computer Ethics</item>
+        <item>Electronics and Metrology</item>
+        <item>Databases</item>
+        <item>Computer Graphics </item>
+        <item>Multimedia Systems</item>
+    </string-array>
+
+    <!--Add new subject-->
+    <string name="add_subject_toolbar_text">Add subject</string>
+    <string name="hint_subject_title">Subject</string>
+    <string name="hint_subject_color">Color</string>
+    <string name="warning_add_subject_empty">You have to specify the subject!</string>
+    <string name="warning_add_subject_badchar">The subject\'s title must to start from letter</string>
+    <string name="warning_add_subject_subject_already_exists">This subject already exist</string>
+    <string name="button_text_change_subject">Change</string>
+
+    <string name="button_text_save">Save</string>
+    <string name="button_text_back">Back</string>
+
+
+    <!--Single subject exams-->
+    <string name="sse_toolbar">Exams</string>
+    <string name="sse_default_exam_info">No info</string>
+    <string name="sse_info_average">Average: %1$s</string>
+    <string name="sse_info_median">Median: %1$s</string>
+    <string name="sse_info_dominant">Dominant: %1$s</string>
+    <string name="sse_info_lack_dominant">empty</string>
+    <string name="sse_info_passed">Passed: %1$s</string>
+    <string name="sse_info_failed">Failed: %1$s</string>
+    <string name="sse_info_percent">All: %1$s</string>
+
+    <!--ungraded exams-->
+    <string name="ungraded_toolbar_text">Ungraded</string>
+
+    <!--list items-->
+    <string name="list_item_old_exam_no_grades">Ungraded</string>
+
+    <!--transitions -->
+    <string name="transition_list_item_to_toolbar">listItemToToolbar</string>
+
+    <!--tags-->
+    <string name="tag_dialog_select_grade">selectGrade</string>
+    <string name="tag_dialog_select_subject">selectSubject</string>
+    <string name="tag_dialog_edit_subject">editSubject</string>
+    <string name="tag_dialog_add_new_subject">addNewSubject</string>
+    <string name="tag_dialog_edit">confirm</string>
+    <string name="tag_dialog_confirm">confirm</string>
+    <string name="tag_dialog_radio">radio</string>
+
+
+    <!--dialogs-->
+    <string name="dialog_select_grade_title">Select grade</string>
+    <string name="dialog_select_grade_posbut">Select</string>
+    <string name="dialog_save_posbut">Save</string>
+    <string name="dialog_negbut">Bacl</string>
+    <string name="dialog_enter_text_title">Enter info</string>
+    <string name="dialog_confirm_pref_title">Change grade</string>
+    <string name="dialog_confirm_pref_content">Be careful! After change in this field you will lose all exams. Continue?</string>
+
+
+    <!--preferences-->
+    <string name="title_activity_settings">Settings</string>
+    <string name="pref_desing_group">Appearance</string>
+    <string name="pref_night_mode">Night theme</string>
+    <string name="pref_user_group">User</string>
+    <string name="pref_user_name">User name</string>
+    <string name="pref_user_name_sub" />
+
+    <string name="pref_grades_group">Grades</string>
+    <string name="pref_grades">Grade types</string>
+    <string name="pref_grades_sub">Select your school</string>
+
+    <!--todo rename
+    -->
+    <string name="pref_grades_decimal">Cząstkowe oceny jako całość</string>
+    <string name="pref_grades_decimal_sub">Oceny cząstkowe (np. 3+) będą liczone w statystykach jako całe.
+        W przeciwnym wypadku ± 0.25</string>
+
+    <!--preference keys-->
+    <string name="key_night_mode" translatable="false">pref_night_mode</string>
+    <string name="key_grades_type" translatable="false">pref_grades_type</string>
+    <string name="key_grades_decimal" translatable="false">pref_grades_decimal</string>
+
+    <string name="key_user_name" translatable="false">pref_user_name</string>
+    <string name="key_user_auth_token" translatable="false">pref_user_auth_token</string>
+    <string name="key_user_is_logged" translatable="false">pref_user_is_logged</string>
+    <string name="key_user_id" translatable="false">pref_user_id</string>
+    <string name="key_last_modified" translatable="false">pref_last_modified</string>
+
+
+    <!--preference grade type-->
+    <string-array name="pref_grades_entries">
+        <item>Primary school</item>
+        <item>University</item>
+    </string-array>
+
+    <string-array name="pref_grades_entryValues">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+
+    <string name="button_confirm_yes">Yes</string>
+    <string name="button_confirm_no">No</string>
+    <string name="toolbar_main_title">Exams</string>
+    <string name="key_fabric_subjects"  translatable="false">pref_fabric_subjects</string>
+    <string name="pref_fabric_subjects_sub">Delete all subjects and set the default values</string>
+    <string name="pref_fabric_subjects">Reset subjectss</string>
+    <string name="key_fabric_exams" translatable="false">key_fabric_exams</string>
+    <string name="pref_fabric_exams_sub">Delete all (incoming and already written)  exams information</string>
+    <string name="pref_fabric_exams">Delete exams</string>
+    <string name="pref_fabric_group">Fabric settings</string>
+    <string name="key_fabric_group" translatable="false">qqq</string>
+    <string name="menu_item_about">About</string>
+    <string name="menu_item_exams">Exams</string>
+    <string name="menu_item_login">Login</string>
+    <string name="menu_item_logout">Logout</string>
+
+
+    <!--login activity-->
+    <string name="toast_empty_creditionals">You have to specify credentials</string>
+    <string name="toast_bad_creditionals">Incorrect data</string>
+    <string name="toast_server_error">Server is now unavailable</string>
+    <string name="toast_successful_login">Login successful</string>
+    <string name="toast_unexpected_error">An unexpected error occurs</string>
+    <string name="toast_cannot_find_user_error">User doesn\'t exist</string>
+    <string name="toast_password_error">Password is incorrect</string>
+
+
+    <string name="net_host" translatable="false">https://quiet-eyrie-24197.herokuapp.com</string>
+
+
+    <string name="net_auth_header" translatable="false">X-AUTH-TOKEN</string>
+    <string name="toast_logout_text">Log out</string>
+    <string name="error_login_unavailable">Username isn\'t available</string>
+    <string name="error_email_unavailable">Email isn\'t available</string>
+    <string name="error_email_incorrect">Incorrect email</string>
+    <string name="net_register_login_message">available</string>
+    <string name="error_password">Password is too short</string>
+    <string name="dialog_register_title">Registration</string>
+    <string name="dialog_register_message">Registration was successful. On your email will be sent an activation link.</string>
+    <string name="tag_dialog_register" translatable="false">tag_dialog_register</string>
+    <string name="error_register_password">Password have to has at least 8 characters</string>
+    <string name="error_email_or_login_unavailable">Data is unavailable</string>
+    <string name="error_connection">Server is now unavailable</string>
+    <string name="tag_dialog_alert" translatable="false">tag_dialog_alert</string>
+    <string name="about_title">ExamsHelper</string>
+    <string name="about_text">Application was created by Jakub Gruda</string>
+    <string name="error_password_too_short">Password have to has at least 8 characters</string>
+    <string name="error_login_incorrect">Contains invalid characters</string>
+    <string name="hamburger_title_logout">Logged out</string>
+    <string name="stats_toolbar_main">All</string>
+    <string name="stats_no_exams">No exams</string>
+    <string name="chart_avg_desc">Grades average</string>
+    <string name="chart_freq_desc">Monthly number of exams</string>
+    <string name="chart_percent_desc">Number of concrete subject\'s exams</string>
+    <string name="nothing" translatable="false" />
+    <string name="toolbar_login">Sign in</string>
+    <string name="login_login">Login</string>
+    <string name="login_button_login">Sign in</string>
+    <string name="login_register">Sign up</string>
+    <string name="register_email">Email</string>
+    <string name="show_hide_password_password">Password</string>
+    <string name="register_button">Create account</string>
+    <string name="register_username">Username</string>
+
+
+</resources>

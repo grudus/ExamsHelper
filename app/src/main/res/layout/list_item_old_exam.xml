@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:id="@+id/list_item_adding_exam_linear"
+    android:orientation="horizontal"
+    android:background="@drawable/ripple_effect"
+    android:clickable="true"
+    android:padding="@dimen/list_item_margin">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/CircularTextView"
+            android:id="@+id/list_item_old_exam_icon_text" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/list_item_main_text_size"
+            android:id="@+id/list_item_old_exam_subject"
+            android:text="@string/list_item_old_exam_no_grades"
+            android:textColor="?android:attr/textColor"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="@dimen/list_item_radius"
+        android:layout_height="@dimen/list_item_radius"
+        android:background="@drawable/circular_bin_icon"
+        android:id="@+id/list_item_image_under_icon"
+        android:src="@drawable/bin_icon"
+        android:padding="5dp"
+        android:tint="#ffffff"
+        android:visibility="gone"/>
+
+</RelativeLayout>
