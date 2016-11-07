@@ -24,7 +24,7 @@ public abstract class SubjectEntry implements BaseColumns {
 
     public static final String CREATE_TABLE_QUERY = "CREATE TABLE " + TABLE_NAME +
             " ( " +
-            _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            _ID + " INTEGER PRIMARY KEY, " +
             TITLE_COLUMN + " TEXT NOT NULL, " +
             COLOR_COLUMN + " TEXT NOT NULL, " +
             HAS_GRADE_COLUMN + " INTEGER, " +

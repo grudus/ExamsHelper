@@ -25,7 +25,7 @@ public abstract class ExamEntry implements BaseColumns {
 
     public static final String CREATE_TABLE_QUERY = "CREATE TABLE " + TABLE_NAME +
             " ( " +
-            _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            _ID + " INTEGER PRIMARY KEY, " +
             SUBJECT_ID_COLUMN + " INTEGER NOT NULL, " +
             INFO_COLUMN + " TEXT, " +
             DATE_COLUMN + " INTEGER NOT NULL, " +

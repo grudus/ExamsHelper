@@ -278,14 +278,17 @@ public final class SubjectsQuery {
         ContentValues[] values = new ContentValues[jsonSubjects.size()];
 
         for (int i = 0; i < jsonSubjects.size(); i++) {
-            ContentValues cv = new ContentValues(5);
+            ContentValues cv = new ContentValues(6);
             JsonSubject subject = jsonSubjects.get(i);
+            cv.put(_ID, subject.getId());
             cv.put(TITLE_COLUMN, subject.getTitle());
             cv.put(COLOR_COLUMN, subject.getColor());
             cv.put(HAS_GRADE_COLUMN, "0");
             cv.put(DELETED_COLUMN, "0");
             cv.put(MODIFIED_COLUMN, subject.getModified());
             values[i] = cv;
+
+            Log.d("@@@" + SubjectsQuery.class.getSimpleName(), "insertSubjects: " + cv);
         }
 
         int counter = 0;
