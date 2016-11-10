@@ -10,6 +10,7 @@ import android.util.Log;
 
 import com.grudus.nativeexamshelper.activities.ExamsMainActivity;
 import com.grudus.nativeexamshelper.database.QueryHelper;
+import com.grudus.nativeexamshelper.database.subjects.SubjectsQuery;
 import com.grudus.nativeexamshelper.helpers.normal.DateHelper;
 import com.grudus.nativeexamshelper.pojos.Exam;
 import com.grudus.nativeexamshelper.pojos.JsonExam;
@@ -230,12 +231,14 @@ public class ExamsQuery {
             ContentValues cv = new ContentValues(6);
             JsonExam exam = jsonExams.get(i);
 
-            cv.put(SUBJECT_ID_COLUMN, exam.getSubjectId());
+            cv.put(SUBJECT_ID_COLUMN, exam.getSubjectAndroidId());
             cv.put(INFO_COLUMN, exam.getExamInfo());
             cv.put(DATE_COLUMN, exam.getDate().getTime());
             cv.put(GRADE_COLUMN, exam.getGrade());
             cv.put(MODIFIED_COLUMN, exam.getLastModified());
             cv.put(DELETED_COLUMN, exam.isDeleted() ? 1 : 0);
+
+            Log.d("@@@" + ExamsQuery.class.getSimpleName(), "insertExams: " + cv);
 
             values[i] = cv;
         }

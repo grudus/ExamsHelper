@@ -9,7 +9,7 @@ import java.util.Date;
 
 public class JsonExam {
     private Long id;
-    private Long subjectId;
+    private Long subjectAndroidId;
     private Long userId;
     private String examInfo;
     private Date date;
@@ -18,9 +18,9 @@ public class JsonExam {
     private Long lastModified;
     private boolean deleted;
 
-    public JsonExam(Long id, Long subjectId, Long userId, String examInfo, Date date, Double grade, Long lastModified, boolean deleted) {
+    public JsonExam(Long id, Long subjectAndroidId, Long userId, String examInfo, Date date, Double grade, Long lastModified, boolean deleted) {
         this.id = id;
-        this.subjectId = subjectId;
+        this.subjectAndroidId = subjectAndroidId;
         this.userId = userId;
         this.examInfo = examInfo;
         this.date = date;
@@ -42,12 +42,12 @@ public class JsonExam {
         this.id = id;
     }
 
-    public Long getSubjectId() {
-        return subjectId;
+    public Long getSubjectAndroidId() {
+        return subjectAndroidId;
     }
 
-    public void setSubjectId(Long subjectId) {
-        this.subjectId = subjectId;
+    public void setSubjectAndroidId(Long subjectAndroidId) {
+        this.subjectAndroidId = subjectAndroidId;
     }
 
     public Long getUserId() {

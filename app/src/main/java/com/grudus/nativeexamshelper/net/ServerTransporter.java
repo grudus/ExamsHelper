@@ -22,7 +22,17 @@ public class ServerTransporter {
 
     public static final String TAG = "@@@" + ServerTransporter.class.getSimpleName();
 
-    public static void tryToShareDataWithServer(Context context) {
+
+    /**
+     * TODO: 17.10.16 clean this code
+     * <p>
+     * 1) get information about last modification on server and compare with last modification on phone
+     * 1a) equals - do nothin
+     * 1b) server's data is newer - get fresh subjects from server and save on device
+     * 1c) phone's data is newer - send modified data to server
+     */
+
+    public static Observable<?> tryToShareDataWithServer(Context context) {
         final long lastModified = getLastModifiedTime(context);
 
 
@@ -30,13 +40,13 @@ public class ServerTransporter {
         ExamsDbHelper helper = ExamsDbHelper.getInstance(context);
         helper.openDB();
 
-        retrofit.getUserInfo()
+        return retrofit.getUserInfo()
                 .flatMap(response -> {
                     ExceptionsHelper.checkResponse(response);
                     JsonUser user = response.body();
 
-                    Log.d(TAG, "onCreate: last modified user " + DateHelper.getReadableDataFromLong(user.getLastModified()));
-                    Log.d(TAG, "onCreate: last modified system: " + DateHelper.getReadableDataFromLong(lastModified));
+                    Log.d(TAG, "onCreate: last modified user " + DateHelper.getReadableDataFromLong(user.getLastModified(), "dd/MM/yyyy HH:mm:ss"));
+                    Log.d(TAG, "onCreate: last modified system: " + DateHelper.getReadableDataFromLong(lastModified, "dd/MM/yyyy HH:mm:ss"));
 
                     if (areEquals(user.getLastModified(), lastModified)) {
                         Log.d(TAG, "onCreate: modified equals");
@@ -64,21 +74,13 @@ public class ServerTransporter {
                     }
                 })
                 .flatMap(i -> helper.removeSubjectWithDeleteChange())
-                .flatMap(i -> helper.removeExamsWithChangeDelete())
-                .subscribeOn(Schedulers.io())
-                .subscribe(i -> Log.e(TAG, "retro onNext: removed " + i),
-                        error -> Log.e(TAG, "retro on: error", error),
-                        () -> {
-                            Log.e(TAG, "retro: on completed");
-                            new UserPreferences(context).changeLastModifiedToNow();
-                        });
-
+                .flatMap(i -> helper.removeExamsWithChangeDelete());
     }
 
 
     private static long getLastModifiedTime(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context)
-                .getLong(context.getString(R.string.key_last_modified), Calendar.getInstance().getTime().getTime());
+                .getLong(context.getString(R.string.key_last_modified), 2);
     }
 
     private static boolean areEquals(long lastModified, long lastModified1) {

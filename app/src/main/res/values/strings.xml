@@ -188,7 +188,8 @@
     <string name="toast_password_error">Password is incorrect</string>
 
 
-    <string name="net_host" translatable="false">https://quiet-eyrie-24197.herokuapp.com</string>
+    <!--<string name="net_host" translatable="false">https://quiet-eyrie-24197.herokuapp.com</string>-->
+    <string name="net_host" translatable="false">http://192.168.0.105:8080</string>
 
 
     <string name="net_auth_header" translatable="false">X-AUTH-TOKEN</string>

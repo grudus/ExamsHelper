@@ -32,22 +32,12 @@ public class MyApplication extends Application {
         if (!sharingDataWithServer())
             return;
 
-        ServerTransporter.tryToShareDataWithServer(this);
         printDatabase(ExamsDbHelper.getInstance(this));
 
         new ExamsHelper(this).setEmptyGradeToPastExams();
         new ExamsHelper(this).removeTrash();
 
     }
-
-    /**
-     * TODO: 17.10.16 clean this code
-     * <p>
-     * 1) get information about last modification on server and compare with last modification on phone
-     * 1a) equals - do nothin
-     * 1b) server's data is newer - get fresh subjects from server and save on device
-     * 1c) phone's data is newer - send modified data to server
-     */
 
 
     private void initializeContexts() {

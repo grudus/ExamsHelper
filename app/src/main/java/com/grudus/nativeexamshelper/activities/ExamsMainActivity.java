@@ -18,19 +18,26 @@ import com.grudus.nativeexamshelper.database.ExamsDbHelper;
 import com.grudus.nativeexamshelper.helpers.normal.ThemeHelper;
 import com.grudus.nativeexamshelper.layouts.Hamburger;
 import com.grudus.nativeexamshelper.net.ServerTransporter;
+import com.grudus.nativeexamshelper.pojos.UserPreferences;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
-public class ExamsMainActivity extends AppCompatActivity{
+public class ExamsMainActivity extends AppCompatActivity {
 
     public static final String TAG = "@@@" + ExamsMainActivity.class.getSimpleName();
 
 
-    @BindView(R.id.view_pager) ViewPager viewPager;
-    @BindView(R.id.tabs) SlidingTabLayout slidingTabLayout;
-    @BindView(R.id.drawer_layout) DrawerLayout drawerLayout;
-    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.view_pager)
+    ViewPager viewPager;
+    @BindView(R.id.tabs)
+    SlidingTabLayout slidingTabLayout;
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawerLayout;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     private Hamburger hamburger;
 
@@ -40,14 +47,25 @@ public class ExamsMainActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ThemeHelper.onActivityCreateSetTheme(this);
-        ServerTransporter.tryToShareDataWithServer(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_exams);
         ButterKnife.bind(this);
 
         initDatabase();
+        ServerTransporter.tryToShareDataWithServer(this)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(i -> {
+                        },
+                        error -> {
+                            initViewPager();
+                        },
+                        () -> {
+                            initViewPager();
+                            new UserPreferences(this).changeLastModifiedToNow();
+                        });
 
-        initViewPager();
+
         hamburger = new Hamburger(this, R.id.nvView, drawerLayout);
         hamburger.setSelectedItem(1);
         hamburger.setUpNavigationView();
@@ -89,7 +107,6 @@ public class ExamsMainActivity extends AppCompatActivity{
         setSupportActionBar(toolbar);
         hamburger.setUpToolbar(toolbar);
     }
-
 
 
     @Override

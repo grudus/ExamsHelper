@@ -96,7 +96,7 @@ public class ShowHidePasswordView extends FrameLayout {
         });
 
         editText.setOnFocusChangeListener((v, hasFocus) -> {
-            if (!hasFocus)
+            if (!hasFocus && onErrorListener != null)
                 onErrorListener.onError();
         });
 
