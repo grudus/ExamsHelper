@@ -10,11 +10,12 @@ public class JsonSubject {
     private String color;
     private boolean deleted;
     private long lastModified;
+    private boolean hasGrade;
 
     public JsonSubject() {
     }
 
-    public JsonSubject(Long id, Long userId, String title, String color, boolean deleted, long modified) {
+    public JsonSubject(Long id, Long userId, String title, String color, boolean deleted, long modified, boolean hasGrade) {
 
         this.id = id;
         this.userId = userId;
@@ -22,6 +23,7 @@ public class JsonSubject {
         this.color = color;
         this.deleted = deleted;
         this.lastModified = modified;
+        this.hasGrade = hasGrade;
     }
 
     public Long getId() {
@@ -77,5 +79,13 @@ public class JsonSubject {
     @Override
     public String toString() {
         return new Gson().toJson(this);
+    }
+
+    public boolean isHasGrade() {
+        return hasGrade;
+    }
+
+    public void setHasGrade(boolean hasGrade) {
+        this.hasGrade = hasGrade;
     }
 }

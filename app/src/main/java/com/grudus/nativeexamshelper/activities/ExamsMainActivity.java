@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.grudus.nativeexamshelper.R;
@@ -52,16 +53,18 @@ public class ExamsMainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         initDatabase();
+        initViewPager();
+
         ServerTransporter.tryToShareDataWithServer(this)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(i -> {
                         },
                         error -> {
-                            initViewPager();
+                            Log.e(TAG, "onCreate: " + error.getMessage(), error);
                         },
                         () -> {
-                            initViewPager();
+                            refreshPages();
                             new UserPreferences(this).changeLastModifiedToNow();
                         });
 
@@ -71,6 +74,11 @@ public class ExamsMainActivity extends AppCompatActivity {
         hamburger.setUpNavigationView();
         setUpToolbar();
 
+    }
+
+    private void refreshPages() {
+        ((AddingExamFragment) viewPagerAdapter.getFragment(0)).refresh();
+        ((OldExamsFragment) viewPagerAdapter.getFragment(1)).refresh();
     }
 
     @Override

@@ -68,8 +68,8 @@ public class CursorToArrayConverter {
                     cursor.getString(SubjectEntry.TITLE_COLUMN_INDEX),
                     cursor.getString(SubjectEntry.COLOR_COLUMN_INDEX),
                     cursor.getInt(SubjectEntry.DELETED_COLUMN_INDEX) != 0,
-                    cursor.getLong(SubjectEntry.MODIFIED_COLUMN_INDEX)
-            );
+                    cursor.getLong(SubjectEntry.MODIFIED_COLUMN_INDEX),
+                    cursor.getInt(SubjectEntry.HAS_GRADE_COLUMN_INDEX) != 0);
     }
 
     public Jsonable<JsonExam> getExam() {

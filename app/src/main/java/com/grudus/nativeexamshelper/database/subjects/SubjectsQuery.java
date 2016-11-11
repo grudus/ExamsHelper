@@ -283,9 +283,9 @@ public final class SubjectsQuery {
             cv.put(_ID, subject.getId());
             cv.put(TITLE_COLUMN, subject.getTitle());
             cv.put(COLOR_COLUMN, subject.getColor());
-            cv.put(HAS_GRADE_COLUMN, "0");
             cv.put(DELETED_COLUMN, "0");
             cv.put(MODIFIED_COLUMN, subject.getModified());
+            cv.put(HAS_GRADE_COLUMN, subject.isHasGrade());
             values[i] = cv;
 
             Log.d("@@@" + SubjectsQuery.class.getSimpleName(), "insertSubjects: " + cv);

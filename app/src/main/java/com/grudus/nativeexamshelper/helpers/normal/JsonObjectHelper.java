@@ -15,13 +15,13 @@ public class JsonObjectHelper {
         this.context = context;
     }
 
-    public JsonSubject subjectObjectToJsonSubject(Subject subject, Long id, boolean deleted, long lastModified) {
+    public JsonSubject subjectObjectToJsonSubject(Subject subject, Long id, boolean deleted, long lastModified, boolean hasGrade) {
         return new JsonSubject(
                 id,
                 new UserPreferences(context).getLoggedUser().getId(),
                 subject.getTitle(),
                 subject.getColor(),
                 deleted,
-                lastModified);
+                lastModified, hasGrade);
     }
 }

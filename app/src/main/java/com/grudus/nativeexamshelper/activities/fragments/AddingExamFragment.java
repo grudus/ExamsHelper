@@ -72,6 +72,9 @@ public class AddingExamFragment extends Fragment {
             examsDbHelper = ExamsDbHelper.getInstance(getContext());
     }
 
+    public void refresh() {
+        populateRecyclerView();
+    }
 
     private void populateRecyclerView() {
         subscription =
@@ -79,12 +82,17 @@ public class AddingExamFragment extends Fragment {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(cursor -> {
+                    if (adapter != null) {
+                        adapter.changeCursor(cursor);
+                        return;
+                    }
                     adapter = new ExamsAdapter(getContext(), cursor);
                     recyclerView.setAdapter(adapter);
                     recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                 }, error -> Log.e(TAG, "populateRecyclerView: ERRRRRRR", error));
 
     }
+
 
     @Override
     public void onPause() {

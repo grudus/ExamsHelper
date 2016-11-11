@@ -61,12 +61,20 @@ public class OldExamsFragment extends Fragment {
     }
 
 
+    public void refresh() {
+        populateList();
+    }
+
     private void populateList() {
         subscription =
             examsDbHelper.getSubjectsWithGrade()
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
                     .subscribe(cursor -> {
+                        if (adapter != null) {
+                            adapter.changeCursor(cursor);
+                            return;
+                        }
                         adapter = new OldExamsAdapter(getActivity(), cursor);
                         recyclerView.setAdapter(adapter);
                         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -98,4 +106,5 @@ public class OldExamsFragment extends Fragment {
     public void closeDatabase() {
         adapter.closeDatabase();
     }
+
 }
