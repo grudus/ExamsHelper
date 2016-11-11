@@ -1,7 +1,9 @@
 package com.grudus.nativeexamshelper.activities;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
@@ -9,6 +11,7 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -25,6 +28,7 @@ import com.grudus.nativeexamshelper.database.subjects.SubjectsQuery;
 import com.grudus.nativeexamshelper.dialogs.reusable.ConfirmDialog;
 import com.grudus.nativeexamshelper.dialogs.reusable.RadioDialog;
 import com.grudus.nativeexamshelper.helpers.ToastHelper;
+import com.grudus.nativeexamshelper.helpers.normal.CalendarHelper;
 import com.grudus.nativeexamshelper.helpers.normal.ColorHelper;
 import com.grudus.nativeexamshelper.helpers.normal.ThemeHelper;
 import com.grudus.nativeexamshelper.pojos.UserPreferences;
@@ -85,6 +89,7 @@ public class SettingsActivity extends AppCompatActivity {
         private String GRADE_DECIMAL_KEY ;
         private String FABRIC_EXAMS_KEY ;
         private String FABRIC_SUBJECTS_KEY ;
+        private String SYNC_CALENDAR_KEY;
 
         private Subscription subscription;
 
@@ -120,6 +125,7 @@ public class SettingsActivity extends AppCompatActivity {
             GRADE_DECIMAL_KEY = getActivity().getString(R.string.key_grades_decimal);
             FABRIC_EXAMS_KEY = getActivity().getString(R.string.key_fabric_exams);
             FABRIC_SUBJECTS_KEY = getActivity().getString(R.string.key_fabric_subjects);
+            SYNC_CALENDAR_KEY = getString(R.string.key_grades_calendar);
         }
 
         private void setMargins(View view) {
@@ -248,10 +254,25 @@ public class SettingsActivity extends AppCompatActivity {
                 SwitchPreference pref = (SwitchPreference) findPreference(key);
                 Grades.enableDecimalsInGrades(!pref.isChecked());
             }
+            
+            else if (key.equals(SYNC_CALENDAR_KEY)) {
+                SwitchPreference pref = (SwitchPreference) findPreference(key);
+                if (pref.isChecked()) {
+                    if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
+                        if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.WRITE_CALENDAR)) {
+                            Toast.makeText(getActivity(), R.string.toast_calendar_no_permission, Toast.LENGTH_LONG).show();
+                            pref.setChecked(false);
+                        }
 
-
+                        else {
+                            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_CALENDAR}, CalendarHelper.MY_PERMISSIONS_REQUEST_WRITE_CALENDAR);
+                            pref.setChecked(false);
+                        }
+                    }
+                }
+                
+            }
 
         }
-
     }
 }

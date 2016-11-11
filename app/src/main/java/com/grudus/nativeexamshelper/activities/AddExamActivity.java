@@ -186,7 +186,7 @@ public class AddExamActivity extends AppCompatActivity {
 
     private boolean savingInCalendarEnabled() {
         return PreferenceManager.getDefaultSharedPreferences(this)
-                .getBoolean(getString(R.string.key_user_calendar_sync), true);
+                .getBoolean(getString(R.string.key_grades_calendar), false);
     }
 
     private void saveInCalendar() {

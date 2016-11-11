@@ -225,9 +225,14 @@
     <string name="show_hide_password_password">Password</string>
     <string name="register_button">Create account</string>
     <string name="register_username">Username</string>
-    <string name="key_user_calendar_sync">key_user_calendar_sync</string>
+    <string name="key_user_calendar_sync" translatable="false">key_user_calendar_sync</string>
     <string name="calendar_subject">%1$s exam</string>
     <string name="toast_calendar_no_permission">Aby zapisac dane w kalendarzu musisz go odblokowac</string>
+    <string name="key_sync_group" translatable="false">www</string>
+    <string name="pref_sync_group">Sync</string>
+    <string name="key_grades_calendar" translatable="false">pref_grades_calendar</string>
+    <string name="pref_grades_calendar_sub">All incoming exams will be saved in your default calendar application</string>
+    <string name="pref_grades_calendar">Synchronize with calendar</string>
 
 
 </resources>

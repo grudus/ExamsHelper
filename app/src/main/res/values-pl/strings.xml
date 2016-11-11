@@ -204,6 +204,9 @@
     <string name="show_hide_password_password">Hasło</string>
     <string name="calendar_subject">Egzamin z %1$s</string>
     <string name="toast_calendar_no_permission">Musisz odblokowac kalendar!</string>
+    <string name="pref_grades_calendar">Synchronizuj z kalendarzem</string>
+    <string name="pref_grades_calendar_sub">Wszystkie nadchodzące egzaminy będą zapisywane w aplikacji kalendarza</string>
+    <string name="pref_sync_group">Synchronizacja</string>
 
 
 </resources>

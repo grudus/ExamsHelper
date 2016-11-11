@@ -7,9 +7,9 @@
 
 
         <CheckBoxPreference
-            android:key="@string/key_night_mode"
             android:defaultValue="true"
-            android:title="@string/pref_night_mode"/>
+            android:key="@string/key_night_mode"
+            android:title="@string/pref_night_mode" />
 
     </PreferenceCategory>
 
@@ -19,30 +19,43 @@
 
         <Preference
             android:key="@string/key_grades_type"
-            android:title="@string/pref_grades"
-            android:summary="@string/pref_grades_sub" />
+            android:summary="@string/pref_grades_sub"
+            android:title="@string/pref_grades" />
 
         <SwitchPreference
+            android:defaultValue="true"
             android:key="@string/key_grades_decimal"
-            android:title="@string/pref_grades_decimal"
             android:summary="@string/pref_grades_decimal_sub"
-            android:defaultValue="true" />
+            android:title="@string/pref_grades_decimal" />
 
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="@string/key_sync_group"
+        android:title="@string/pref_sync_group">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_grades_calendar"
+            android:summary="@string/pref_grades_calendar_sub"
+            android:title="@string/pref_grades_calendar" />
+
+    </PreferenceCategory>
+
 
     <PreferenceCategory
         android:key="@string/key_fabric_group"
         android:title="@string/pref_fabric_group">
 
         <Preference
-            android:title="@string/pref_fabric_exams"
+            android:key="@string/key_fabric_exams"
             android:summary="@string/pref_fabric_exams_sub"
-            android:key="@string/key_fabric_exams" />
+            android:title="@string/pref_fabric_exams" />
 
         <Preference
-            android:title="@string/pref_fabric_subjects"
+            android:key="@string/key_fabric_subjects"
             android:summary="@string/pref_fabric_subjects_sub"
-            android:key="@string/key_fabric_subjects" />
+            android:title="@string/pref_fabric_subjects" />
 
     </PreferenceCategory>
 
