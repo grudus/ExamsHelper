@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-    tools:context=".activities.fragments.OldExamsFragment">
+    tools:activity=".activities.fragments.OldExamsFragment">
 
 
     <android.support.v7.widget.RecyclerView

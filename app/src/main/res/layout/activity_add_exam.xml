@@ -9,7 +9,7 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:background="?attr/background"
-    tools:context="com.grudus.nativeexamshelper.activities.AddExamActivity">
+    tools:activity="com.grudus.nativeexamshelper.activities.AddExamActivity">
 
     <include layout="@layout/toolbar" />
 

@@ -202,6 +202,8 @@
     <string name="register_email">Email</string>
     <string name="register_username">Login</string>
     <string name="show_hide_password_password">Hasło</string>
+    <string name="calendar_subject">Egzamin z %1$s</string>
+    <string name="toast_calendar_no_permission">Musisz odblokowac kalendar!</string>
 
 
 </resources>

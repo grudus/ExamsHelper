@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     android:background="?attr/background"
-    tools:context="com.grudus.nativeexamshelper.activities.SingleSubjectExamsActivity">
+    tools:activity="com.grudus.nativeexamshelper.activities.SingleSubjectExamsActivity">
 
     <include layout="@layout/toolbar" />
 

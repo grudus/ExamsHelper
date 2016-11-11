@@ -1,8 +1,13 @@
 package com.grudus.nativeexamshelper.activities;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
@@ -18,6 +23,7 @@ import com.grudus.nativeexamshelper.dialogs.SelectSubjectDialog;
 import com.grudus.nativeexamshelper.dialogs.reusable.EnterTextDialog;
 import com.grudus.nativeexamshelper.helpers.dialogs.CalendarDialogHelper;
 import com.grudus.nativeexamshelper.helpers.dialogs.TimeDialogHelper;
+import com.grudus.nativeexamshelper.helpers.normal.CalendarHelper;
 import com.grudus.nativeexamshelper.helpers.normal.DateHelper;
 import com.grudus.nativeexamshelper.helpers.normal.ThemeHelper;
 import com.grudus.nativeexamshelper.helpers.normal.TimeHelper;
@@ -36,19 +42,30 @@ public class AddExamActivity extends AppCompatActivity {
 
     private final String TAG = "@@@" + this.getClass().getSimpleName();
 
-    @BindView(R.id.add_exam_date_input) EditText dateInput;
-    @BindView(R.id.add_exam_subject_input) EditText subjectInput;
-    @BindView(R.id.add_exam_extras_input) EditText extrasInput;
-    @BindView(R.id.add_exam_time_input) EditText timeInput;
-    @BindView(R.id.add_exam_button) Button addExamButton;
-    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.add_exam_date_input)
+    EditText dateInput;
+    @BindView(R.id.add_exam_subject_input)
+    EditText subjectInput;
+    @BindView(R.id.add_exam_extras_input)
+    EditText extrasInput;
+    @BindView(R.id.add_exam_time_input)
+    EditText timeInput;
+    @BindView(R.id.add_exam_button)
+    Button addExamButton;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     private CalendarDialogHelper calendarDialog;
     private TimeDialogHelper timeDialog;
 
     private ExamsDbHelper db;
 
-    private boolean test = false;
+    private boolean test;
+    private CalendarHelper calendarHelper;
+
+    private String examSubjectTitle;
+    private String examInfo;
+    private Date examDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +79,8 @@ public class AddExamActivity extends AppCompatActivity {
 
         calendarDialog = new CalendarDialogHelper(this, this::updateDateView);
         timeDialog = new TimeDialogHelper(this, this::updateTimeView);
+
+        calendarHelper = new CalendarHelper(this);
     }
 
     private void setListenerToDeleteTextViewFocus() {
@@ -121,22 +140,77 @@ public class AddExamActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.add_exam_button)
-    void addExam()  {
-        String subject = subjectInput.getText().toString();
+    void addExam() {
+        examSubjectTitle = subjectInput.getText().toString();
         String date = dateInput.getText().toString();
 
-        if (!inputsAreCorrect(subject, date)) return;
+        if (!inputsAreCorrect(examSubjectTitle, date)) return;
 
-        Date correctDate = getDateWithTime();
+        examDate = getDateWithTime();
 
-        String info = extrasInput.getText().toString();
-        if (info.replaceAll("\\s+", "").isEmpty())
-            info = getString(R.string.sse_default_exam_info);
+        examInfo = extrasInput.getText().toString();
+        if (examInfo.replaceAll("\\s+", "").isEmpty())
+            examInfo = getString(R.string.sse_default_exam_info);
 
 
-        addToDatabase(subject, info, correctDate);
+        addToDatabase();
         new UserPreferences(this).changeLastModifiedToNow();
+
+        if (savingInCalendarEnabled())
+            saveInCalendar();
+
+        else
+            startPreviousActivity();
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+
+        if (requestCode == CalendarHelper.MY_PERMISSIONS_REQUEST_WRITE_CALENDAR) {
+
+            if (permissionWasAdded(grantResults))
+                calendarHelper.addToCalendar(examSubjectTitle, examInfo, examDate);
+
+        } else
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         startPreviousActivity();
+    }
+
+    private boolean permissionWasAdded(int[] grantResults) {
+        return grantResults.length > 0
+                && grantResults[0] == PackageManager.PERMISSION_GRANTED;
+    }
+
+
+    private boolean savingInCalendarEnabled() {
+        return PreferenceManager.getDefaultSharedPreferences(this)
+                .getBoolean(getString(R.string.key_user_calendar_sync), true);
+    }
+
+    private void saveInCalendar() {
+        if (applicationHasPermission()) {
+            calendarHelper.addToCalendar(examSubjectTitle, examInfo, examDate);
+            startPreviousActivity();
+        }
+
+        else {
+            requestPermission();
+        }
+    }
+
+    private boolean applicationHasPermission() {
+        return ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_CALENDAR) == PackageManager.PERMISSION_GRANTED;
+    }
+
+    private void requestPermission() {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_CALENDAR))
+            Toast.makeText(this, R.string.toast_calendar_no_permission, Toast.LENGTH_LONG).show();
+
+        else
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_CALENDAR}, CalendarHelper.MY_PERMISSIONS_REQUEST_WRITE_CALENDAR);
+
     }
 
     private Date getDateWithTime() {
@@ -160,13 +234,13 @@ public class AddExamActivity extends AppCompatActivity {
         return true;
     }
 
-    private void addToDatabase(String subjectTitle, String info, Date correctDate) {
+    private void addToDatabase() {
         if (db == null)
             db = ExamsDbHelper.getInstance(this);
         db.openDB();
 
-        db.findSubjectByTitle(subjectTitle)
-                .flatMap(subject -> db.insertExam(Exam.getExamWithoutId(subject.getId(), info, correctDate)))
+        db.findSubjectByTitle(examSubjectTitle)
+                .flatMap(subject -> db.insertExam(Exam.getExamWithoutId(subject.getId(), examInfo, examDate)))
                 .subscribeOn(Schedulers.io())
                 .subscribe(action -> db.closeDB(), error -> db.closeDB());
 
@@ -182,7 +256,7 @@ public class AddExamActivity extends AppCompatActivity {
     private void deleteFocus() {
         View view = this.getCurrentFocus();
         if (view != null) {
-            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
 
