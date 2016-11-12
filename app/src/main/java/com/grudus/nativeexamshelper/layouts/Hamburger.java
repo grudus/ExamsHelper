@@ -125,8 +125,12 @@ public class Hamburger {
 
         UserPreferences.User user = userPreferences.getLoggedUser();
 
-        if (user.isLogged())
-            title.setText(user.getUsername());
+        if (user.isLogged()) {
+            String username = user.getUsername();
+            if (username.endsWith("_gmail_com"))
+                username = username.substring(0, username.length() - 10);
+            title.setText(username);
+        }
         else
             title.setText(activity.getString(R.string.hamburger_title_logout));
     }

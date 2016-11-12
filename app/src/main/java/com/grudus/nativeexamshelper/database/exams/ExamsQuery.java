@@ -10,7 +10,6 @@ import android.util.Log;
 
 import com.grudus.nativeexamshelper.activities.ExamsMainActivity;
 import com.grudus.nativeexamshelper.database.QueryHelper;
-import com.grudus.nativeexamshelper.database.subjects.SubjectsQuery;
 import com.grudus.nativeexamshelper.helpers.normal.DateHelper;
 import com.grudus.nativeexamshelper.pojos.Exam;
 import com.grudus.nativeexamshelper.pojos.JsonExam;
@@ -113,7 +112,7 @@ public class ExamsQuery {
                 TABLE_NAME,
                 ALL_COLUMNS,
                 WHERE,
-                new String[] {subjectId.toString(), "0", Double.toString(Grades.EMPTY)},
+                new String[] {subjectId.toString(), "0", "0"},
                 null,
                 null,
                 sort
