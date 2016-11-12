@@ -3,6 +3,8 @@ package com.grudus.nativeexamshelper.adapters;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,7 +64,7 @@ public class UngradedExamsAdapter extends RecyclerView.Adapter<UngradedExamsAdap
                 .subscribe(subject -> {
                     bindTextView(holder, subject.getTitle());
                     bindInfoView(holder);
-                    bindIcon(holder, subject.getTitle());
+                    bindIcon(holder, subject.getTitle(), subject.getColor());
                 });
     }
 
@@ -75,8 +77,11 @@ public class UngradedExamsAdapter extends RecyclerView.Adapter<UngradedExamsAdap
         holder.infoView.setText(info);
     }
 
-    private void bindIcon(UngradedExamViewHolder holder, String subject) {
+    private void bindIcon(UngradedExamViewHolder holder, String subject, String color) {
         holder.iconView.setText(subject.substring(0,1).toUpperCase());
+        GradientDrawable bg = (GradientDrawable) holder.iconView.getBackground();
+        bg.setColor(Color.parseColor(color));
+        holder.iconView.setBackground(bg);
     }
 
     @Override
