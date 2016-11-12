@@ -151,6 +151,8 @@ public class SubjectsListActivity extends AppCompatActivity implements ItemClick
         super.onPause();
         examsDbHelper.closeDB();
         adapter.closeCursor();
+        if (subscriptionDB != null && !subscriptionDB.isUnsubscribed())
+            subscriptionDB.unsubscribe();
     }
 
 }
