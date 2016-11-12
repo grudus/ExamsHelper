@@ -207,6 +207,7 @@
     <string name="pref_grades_calendar">Synchronizuj z kalendarzem</string>
     <string name="pref_grades_calendar_sub">Wszystkie nadchodzące egzaminy będą zapisywane w aplikacji kalendarza</string>
     <string name="pref_sync_group">Synchronizacja</string>
+    <string name="dialog_edit_subject_title">Nazwa</string>
 
 
 </resources>

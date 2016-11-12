@@ -34,7 +34,8 @@
         android:textColorHint="?android:attr/textColorHint"
         android:layout_gravity="center"
         android:textSize="20sp"
-        android:hint="Nazwa"/>
+        android:maxLength="20"
+        android:hint="@string/dialog_edit_subject_title"/>
 
     </android.support.design.widget.TextInputLayout>
 
