@@ -73,6 +73,7 @@ public class OldExamsFragment extends Fragment {
                     .subscribe(cursor -> {
                         if (adapter != null) {
                             adapter.changeCursor(cursor);
+                            adapter.notifyDataSetChanged();
                             return;
                         }
                         adapter = new OldExamsAdapter(getActivity(), cursor);

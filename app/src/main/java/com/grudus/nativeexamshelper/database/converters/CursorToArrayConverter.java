@@ -76,7 +76,6 @@ public class CursorToArrayConverter {
         return cursor ->
                 new JsonExam(
                         cursor.getLong(ExamEntry.INDEX_COLUMN_INDEX),
-                        // TODO: 10.10.16 CHANGE, PLEASE
                         cursor.getLong(ExamEntry.SUBJECT_ID_COLUMN_INDEX),
                         userId,
                         cursor.getString(ExamEntry.INFO_COLUMN_INDEX),

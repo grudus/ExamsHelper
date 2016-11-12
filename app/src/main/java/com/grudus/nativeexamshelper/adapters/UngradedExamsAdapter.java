@@ -63,7 +63,7 @@ public class UngradedExamsAdapter extends RecyclerView.Adapter<UngradedExamsAdap
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subject -> {
                     bindTextView(holder, subject.getTitle());
-                    bindInfoView(holder);
+                    bindInfoView(holder, exam.getInfo());
                     bindIcon(holder, subject.getTitle(), subject.getColor());
                 });
     }
@@ -72,8 +72,7 @@ public class UngradedExamsAdapter extends RecyclerView.Adapter<UngradedExamsAdap
         holder.textView.setText(subject);
     }
 
-    private void bindInfoView(UngradedExamViewHolder holder) {
-        String info = cursor.getString(ExamEntry.INFO_COLUMN_INDEX);
+    private void bindInfoView(UngradedExamViewHolder holder, String info) {
         holder.infoView.setText(info);
     }
 

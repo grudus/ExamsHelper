@@ -1,7 +1,6 @@
 package com.grudus.nativeexamshelper;
 
 import android.app.Application;
-import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.grudus.nativeexamshelper.database.ExamsDbHelper;
@@ -24,9 +23,6 @@ public class MyApplication extends Application {
 
         initializeContexts();
 
-        if (!sharingDataWithServer())
-            return;
-
         printDatabase(ExamsDbHelper.getInstance(this));
 
         new ExamsHelper(this).setEmptyGradeToPastExams();
@@ -41,9 +37,6 @@ public class MyApplication extends Application {
         DateHelper.setDateFormat(getResources().getString(R.string.date_format));
     }
 
-    private boolean sharingDataWithServer() {
-        return PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.key_user_is_logged), false);
-    }
 
 
     private void printDatabase(ExamsDbHelper helper) {

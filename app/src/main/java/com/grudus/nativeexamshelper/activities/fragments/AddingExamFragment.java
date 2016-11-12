@@ -84,6 +84,7 @@ public class AddingExamFragment extends Fragment {
                 .subscribe(cursor -> {
                     if (adapter != null) {
                         adapter.changeCursor(cursor);
+                        adapter.notifyDataSetChanged();
                         return;
                     }
                     adapter = new ExamsAdapter(getContext(), cursor);

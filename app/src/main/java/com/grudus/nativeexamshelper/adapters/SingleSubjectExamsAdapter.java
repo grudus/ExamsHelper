@@ -17,6 +17,7 @@ import com.grudus.nativeexamshelper.database.ExamsDbHelper;
 import com.grudus.nativeexamshelper.database.exams.ExamEntry;
 import com.grudus.nativeexamshelper.helpers.normal.DateHelper;
 import com.grudus.nativeexamshelper.pojos.Subject;
+import com.grudus.nativeexamshelper.pojos.UserPreferences;
 import com.grudus.nativeexamshelper.pojos.grades.Grades;
 
 import butterknife.BindView;
@@ -118,7 +119,10 @@ public class SingleSubjectExamsAdapter extends RecyclerView.Adapter<SingleSubjec
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(howMany -> {},
                         onError -> {},
-                        () -> notifyItemRemoved(adapterPosition));
+                        () -> {
+                            notifyItemRemoved(adapterPosition);
+                            new UserPreferences(context).changeLastModifiedToNow();
+                        });
     }
 
     public void changeCursor(Cursor _new) {
