@@ -8,11 +8,11 @@ ExamsHelper offers storing info about all incoming and already written exams. Yo
 
 Here are some previews:
 <br/><br/>
-![screen1](https://lh4.googleusercontent.com/k34ZYP4fxMa6zcIPP2cRQLvMpqQ9TD_jRmTxYs7wLnIOfjQzdXrV5qj6bmuUd1vjLzhRACRDJIFVMx0=w1600-h809-rw)
+![screen1](https://cloud.githubusercontent.com/assets/18220458/20597256/ee6edcde-b242-11e6-858b-c083b1170197.png)
 <br/><br/>
-![screen2](https://lh6.googleusercontent.com/149IIYgT1eeGhJndQ1FYkvQgwAYlkf3tMT9fpYA7fai2XwIZpr92xqeXraJohOsDNG5mBFkf8ohPqS4=w1600-h809-rw)
+![screen2](https://cloud.githubusercontent.com/assets/18220458/20597251/e9884dc2-b242-11e6-9853-78e69c42f301.png)
 <br/><br/>
-![screen3](https://lh3.googleusercontent.com/K0c_J1tZImY48HCj35KUjui7xFMQH1ajN6rAxuRoDcE69Fnn29RRzrgSpxt1g9dAx9LuF6rsOrorqQA=w1600-h809-rw)
+![screen3](https://cloud.githubusercontent.com/assets/18220458/20597258/f207739c-b242-11e6-8893-dde0e3cbbb40.png)
 
 **ExamsHelper** uses RxJava and RxAndroid libraries for asynchrous calls to the database and to the server.
 Application also uses Retrofit api for receiving (and sending) data from (to) the server. Lastly, RetroLambda simplifies notation introducing lambda expressions. 
@@ -20,3 +20,4 @@ Application also uses Retrofit api for receiving (and sending) data from (to) th
 
 
 I hope you will enjoy!
+
